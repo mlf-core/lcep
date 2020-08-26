@@ -1,0 +1,19 @@
+domain: mlflow
+language: xgboost
+project_slug: lcep
+project_slug_no_hyphen: lcep
+template_version: '1.0.0 # <<MLF-CORE_NO_BUMP>>'
+template_handle: mlflow-xgboost
+github_username: mlf-core
+creator_github_username: zethson
+is_github_repo: true
+is_repo_private: false
+is_github_orga: true
+github_orga: mlf-core
+full_name: Lukas Heumos
+email: lukas.heumos@posteo.net
+project_name: lcep
+project_short_description: Classifying cancerous liver samples from gene expression
+  data.
+version: 0.1.0-SNAPSHOT
+license: MIT
