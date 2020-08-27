@@ -34,6 +34,8 @@ Classifying cancerous liver samples from gene expression data.
 Features
 --------
 
+* Warning: This project solely serves as a technical demo and is not supposed to be complete nor useful!
+
 * Fully deterministic machine learning model based on XGBoost and MLflow using the `mlf-core`_ framework
 * Classify cancerous and benign samples from gene expression data
 

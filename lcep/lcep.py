@@ -3,11 +3,13 @@ import xgboost as xgb
 import mlflow
 import mlflow.xgboost
 import time
+import numpy as np
 
-from rich import traceback
+from rich import traceback, print
 
 from mlf_core.mlf_core import log_sys_intel_conda_env, set_general_random_seeds
 from data_loading.data_loader import load_train_test_data
+from evaluation.evaluation import calculate_log_metrics
 
 
 @click.command()
@@ -54,10 +56,13 @@ def start_training(epochs, general_seed, xgboost_seed, cuda, single_precision_hi
         if use_cuda:
             click.echo(click.style(f'{device} Run Time: {str(time.time() - runtime)} seconds', fg='green'))
 
+        # Perform some predictions on the test data, evaluate and log them
+        print('[bold blue]Performing predictions on test data.')
+        test_predictions = np.round(booster.predict(test_data.DM))
+        calculate_log_metrics(test_data.y, test_predictions)
+
         # Log hardware and software
         log_sys_intel_conda_env()
-
-        # booster.predict(X_test)
 
 
 def set_xgboost_random_seeds(seed, param):

@@ -4,6 +4,7 @@ import numpy as np
 from rich import print
 from dataclasses import dataclass
 
+
 @dataclass
 class Dataset:
     X: np.ndarray
