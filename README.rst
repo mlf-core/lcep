@@ -12,6 +12,13 @@ lcep
         :target: https://github.com/mlf-core/lcep/workflows/Train%20lcep%20using%20CPU/badge.svg
         :alt: Github Workflow CPU Training lcep Status
 
+.. image:: https://github.com/mlf-core/lcep/workflows/Publish%20Container%20to%20Docker%20Packages/badge.svg
+        :target: https://github.com/mlf-core/lcep/workflows/Publish%20Container%20to%20Docker%20Packages/badge.svg
+        :alt: Publish Container to Docker Packages
+
+.. image:: https://github.com/mlf-core/lcep/workflows/mlf-core%20lint/badge.svg
+        :target: https://github.com/mlf-core/lcep/workflows/mlf-core%20lint/badge.svg
+        :alt: mlf-core lint
 
 .. image:: https://readthedocs.org/projects/lcep/badge/?version=latest
         :target: https://lcep.readthedocs.io/en/latest/?badge=latest
