@@ -8,6 +8,7 @@ name: lcep
 # conda_env: environment.yml
 docker_env:
   image: mlfcore/lcep:0.1.0-SNAPSHOT
+  volumes: ["${PWD}/data:/data"]
 
 entry_points:
   main:
@@ -17,10 +18,14 @@ entry_points:
       general-seed: {type: int, default: 0}
       xgboost-seed: {type: int, default: 0}
       single-precision-histogram: {type: string, default: 'True'}
+      training-data: {type: string, default: 'train.tsv'}
+      test-data: {type: string, default: 'test.tsv'}
     command: |
           python lcep/lcep.py \
             --cuda {cuda} \
             --epochs {epochs} \
             --general-seed {general-seed} \
             --xgboost-seed {xgboost-seed} \
-            --single-precision-histogram {single-precision-histogram}
+            --single-precision-histogram {single-precision-histogram} \
+            --training-data {training-data} \
+            --test-data {test-data} \

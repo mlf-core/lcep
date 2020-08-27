@@ -16,21 +16,21 @@ from data_loading.data_loader import load_train_test_data
 @click.option('--xgboost-seed', type=int, default=0, help='XGBoost specific random seed.')
 @click.option('--cuda', type=click.Choice(['True', 'False']), help='Enable or disable CUDA support.')
 @click.option('--single-precision-histogram', default=True, help='Enable or disable single precision histogram calculation.')
-def start_training(epochs, general_seed, xgboost_seed, cuda, single_precision_histogram):
+@click.option('--training-data', help='Path to the training data')
+@click.option('--test-data', help='Path to the test data')
+def start_training(epochs, general_seed, xgboost_seed, cuda, single_precision_histogram,
+                   training_data, test_data):
     use_cuda = True if cuda == 'True' else False
 
     with mlflow.start_run():
         # Fetch and prepare data
-        dtrain, dtest = load_train_test_data()
+        dtrain, dtest, gene_names, sample_names_train, sample_names_test = load_train_test_data(training_data, test_data)
 
         # Enable the logging of all parameters, metrics and models to mlflow
         mlflow.xgboost.autolog()
 
         # Set XGBoost parameters
-        param = {
-            'objective': 'multi:softmax',
-            'num_class': 8,
-        }
+        param = {}
         param['single_precision_histogram'] = True if single_precision_histogram == 'True' else False
         param['subsample'] = 0.5
         param['colsample_bytree'] = 0.5
@@ -55,7 +55,7 @@ def start_training(epochs, general_seed, xgboost_seed, cuda, single_precision_hi
             click.echo(click.style(f'{device} Run Time: {str(time.time() - runtime)} seconds', fg='green'))
 
         # Log hardware and software
-        log_sys_intel_conda_env('lcep')
+        log_sys_intel_conda_env()
 
 
 def set_xgboost_random_seeds(seed, param):

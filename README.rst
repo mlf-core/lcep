@@ -1,3 +1,9 @@
+.. image:: https://user-images.githubusercontent.com/21954664/84388841-84b4cc80-abf5-11ea-83f3-b8ce8de36e25.png
+    :target: https://mlf-core.com
+    :alt: mlf-core logo
+
+|
+
 ====
 lcep
 ====
@@ -21,8 +27,8 @@ Classifying cancerous liver samples from gene expression data.
 Features
 --------
 
-* Fully reproducible mlf-core XGBoost model
-* MLF-CORE TODO: Write features here
+* Fully deterministic machine learning model based on XGBoost, MLflow using the `mlf-core`_ framework
+* Classify cancerous and benign samples from gene expression data
 
 
 Credits
