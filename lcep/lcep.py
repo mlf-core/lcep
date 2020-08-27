@@ -24,7 +24,7 @@ def start_training(epochs, general_seed, xgboost_seed, cuda, single_precision_hi
 
     with mlflow.start_run():
         # Fetch and prepare data
-        dtrain, dtest, gene_names, sample_names_train, sample_names_test = load_train_test_data(training_data, test_data)
+        training_data, test_data = load_train_test_data(training_data, test_data)
 
         # Enable the logging of all parameters, metrics and models to mlflow
         mlflow.xgboost.autolog()
@@ -49,13 +49,15 @@ def start_training(epochs, general_seed, xgboost_seed, cuda, single_precision_hi
         # Train on the chosen device
         results = {}
         runtime = time.time()
-        xgb.train(param, dtrain, epochs, evals=[(dtest, 'test')], evals_result=results)
+        booster = xgb.train(param, training_data.DM, epochs, evals=[(test_data.DM, 'test')], evals_result=results)
         device = 'GPU' if use_cuda else 'CPU'
         if use_cuda:
             click.echo(click.style(f'{device} Run Time: {str(time.time() - runtime)} seconds', fg='green'))
 
         # Log hardware and software
         log_sys_intel_conda_env()
+
+        # booster.predict(X_test)
 
 
 def set_xgboost_random_seeds(seed, param):
