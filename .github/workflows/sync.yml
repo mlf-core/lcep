@@ -1,6 +1,9 @@
 name: Sync mlf-core project
 
-on: [push]
+on:
+  schedule:
+    - cron: '0 1 * * *' # 1 am UTC
+  workflow_dispatch:
 
 jobs:
   build:
@@ -15,16 +18,17 @@ jobs:
           run: pip install mlf-core
 
         - uses: actions/checkout@v2
+          name: Check out source-code repository
           with:
               fetch-depth: 0
-          name: Check out source-code repository
+              token: ${{ secrets.MLF_CORE_SYNC_TOKEN}}
 
         - uses: oleksiyrudenko/gha-git-credentials@v1
           with:
                name: 'zethson'
                email: 'lukas.heumos@posteo.net'
                actor: 'zethson'
-               token: '${{ secrets.MLF_CORE_SYNC_TOKEN}}'
+               token: '${{ secrets.MLF_CORE_SYNC_TOKEN }}'
 
         - name: Sync project
           run: mlf-core sync . ${{ secrets.MLF_CORE_SYNC_TOKEN }} zethson
