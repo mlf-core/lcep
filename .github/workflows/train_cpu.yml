@@ -17,7 +17,7 @@ jobs:
         uses: docker/build-push-action@v1
         with:
           dockerfile: Dockerfile
-          repository: mlfcore/lcep
+          repository: ghcr.io/mlf-core/lcep
           tags: 0.1.0-SNAPSHOT
           push: false
 
@@ -30,4 +30,4 @@ jobs:
         run: pip install mlflow
 
       - name: Train on the CPU
-        run: mlflow run . -P cuda=False
+        run: mlflow run .

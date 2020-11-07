@@ -1,3 +1,5 @@
+import platform
+
 import click
 import tempfile
 import mlflow
@@ -13,13 +15,19 @@ def set_general_random_seeds(seed):
     random.seed(seed)  # Python random
 
 
-def log_sys_intel_conda_env(framework: str):
+def log_sys_intel_conda_env():
     reports_output_dir = tempfile.mkdtemp()
     log_system_intelligence(reports_output_dir)
-    log_conda_environment(reports_output_dir, framework)
+    log_conda_environment(reports_output_dir)
 
 
 def log_system_intelligence(reports_output_dir: str):
+    current_platform = platform.system()
+    if current_platform != 'Linux':
+        click.echo(click.style(f'Running on {current_platform} which is not supported by system-intelligence. Skipping hardware report.', fg='red'))
+        click.echo(click.style(f'Run MLflow with Docker to enforce a Linux environment.', fg='blue'))
+        return
+
     # Scoped import to prevent issues like RuntimeError: Numba cannot operate on non-primary CUDA context
     from system_intelligence.query import query_and_export
 
@@ -34,9 +42,9 @@ def log_system_intelligence(reports_output_dir: str):
     mlflow.log_artifacts(reports_output_dir, artifact_path='reports')
 
 
-def log_conda_environment(reports_output_dir: str, framework: str):
+def log_conda_environment(reports_output_dir: str):
     click.echo(click.style('Exporting conda environment...', fg='blue'))
-    conda_env_filehandler = open(f'{reports_output_dir}/{framework}_env.yml', "w")
-    subprocess.call(['conda', 'env', 'export', '--name', f'{framework}'], stdout=conda_env_filehandler)
+    conda_env_filehandler = open(f'{reports_output_dir}/lcep_conda_environment.yml', "w")
+    subprocess.call(['conda', 'env', 'export', '--name', 'lcep'], stdout=conda_env_filehandler)
     click.echo(click.style('Uploading conda environment report as a run artifact...', fg='blue'))
-    mlflow.log_artifact(f'{reports_output_dir}/{framework}_env.yml', artifact_path='reports')
+    mlflow.log_artifact(f'{reports_output_dir}/lcep_conda_environment.yml', artifact_path='reports')
