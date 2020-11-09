@@ -4,11 +4,16 @@ Model
 Overview
 ~~~~~~~~~~
 
+<<<<<<< HEAD
 The hereby trained model classifies samples generated from gene expression data into cancerous or benign.
+=======
+The trained model predicts the forest covertype from cartographic variables only.
+>>>>>>> TEMPLATE
 
 Training and test data
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
+<<<<<<< HEAD
 Patients with cancer and without cancer were sequenced (RNA-Seq). All samples of the patients were assigned 'cancerous' or 'benign'.
 The RNA-Seq experiments generated reads, which are commonly associated with expression values per gene.
 Furthermore, all replicates were merged into single samples resulting in median gene expression values per gene.
@@ -23,6 +28,14 @@ Model details
 The model is based on `XGBoost <https://xgboost.readthedocs.io/en/latest/>`_.
 Training was conducted using a single GPU (NVIDIA 1050M), which is also reported in the system-intelligence report.
 Hence, ``gpu_hist`` is the training algorithm of choice.
+=======
+The training data origins from the `covertype dataset <https://archive.ics.uci.edu/ml/datasets/covertype>`_, which contains 581012 instances of 54 attributes.
+
+Model architecture
+~~~~~~~~~~~~~~~~~~~~~~
+
+The model is based on `XGBoost <https://xgboost.readthedocs.io/en/latest/>`_.
+>>>>>>> TEMPLATE
 
 Evaluation
 ~~~~~~~~~~~~~
