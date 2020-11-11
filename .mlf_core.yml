@@ -2,7 +2,7 @@ domain: mlflow
 language: xgboost
 project_slug: lcep
 project_slug_no_hyphen: lcep
-template_version: '1.2.0 # <<MLF-CORE_NO_BUMP>>'
+template_version: '1.3.0 # <<MLF-CORE_NO_BUMP>>'
 template_handle: mlflow-xgboost
 github_username: mlf-core
 creator_github_username: zethson
