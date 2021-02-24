@@ -23,7 +23,7 @@ jobs:
               fetch-depth: 0
               token: ${{ secrets.MLF_CORE_SYNC_TOKEN }}
 
-        - uses: oleksiyrudenko/gha-git-credentials@v1
+        - uses: oleksiyrudenko/gha-git-credentials@v2
           with:
                name: 'zethson'
                email: 'lukas.heumos@posteo.net'
@@ -31,4 +31,4 @@ jobs:
                token: '${{ secrets.MLF_CORE_SYNC_TOKEN }}'
 
         - name: Sync project
-          run: mlf-core sync . ${{ secrets.MLF_CORE_SYNC_TOKEN }} zethson
+          run: mlf-core --verbose sync . ${{ secrets.MLF_CORE_SYNC_TOKEN }} zethson

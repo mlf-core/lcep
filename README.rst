@@ -3,15 +3,15 @@ lcep
 ====
 
 .. image:: https://github.com/mlf-core/lcep/workflows/Train%20lcep%20using%20CPU/badge.svg
-        :target: https://github.com/mlf-core/lcep/workflows/Train%20lcep%20using%20CPU/badge.svg
+        :target: https://github.com/mlf-core/lcep/actions?query=workflow%3A%22Train+lcep+using+CPU%22
         :alt: Github Workflow CPU Training lcep Status
 
 .. image:: https://github.com/mlf-core/lcep/workflows/Publish%20Container%20to%20Docker%20Packages/badge.svg
-        :target: https://github.com/mlf-core/lcep/workflows/Publish%20Container%20to%20Docker%20Packages/badge.svg
+        :target: https://github.com/mlf-core/lcep/actions?query=workflow%3A%22Publish+Container+to+Docker+Packages%22
         :alt: Publish Container to Docker Packages
 
 .. image:: https://github.com/mlf-core/lcep/workflows/mlf-core%20lint/badge.svg
-        :target: https://github.com/mlf-core/lcep/workflows/mlf-core%20lint/badge.svg
+        :target: https://github.com/mlf-core/lcep/actions?query=workflow%3A%22mlf-core+lint%22
         :alt: mlf-core lint
 
 
@@ -29,7 +29,7 @@ Classifying cancerous liver samples from gene expression data.
 Features
 --------
 
-* Fully reproducible mlf-core XGBoost model
+* Fully reproducible mlf-core Xgboost model
 * MLF-CORE TODO: Write features here
 
 
