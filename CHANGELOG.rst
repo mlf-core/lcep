@@ -10,6 +10,9 @@ This project adheres to `Semantic Versioning <https://semver.org/>`_.
 
 **Added**
 
+* Added new train and test dataset based on TCGA-LIHC & GTEx (liver) 
+* Added optimzed hyperparamters to the model
+
 **Fixed**
 
 **Dependencies**
