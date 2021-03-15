@@ -1,0 +1,15 @@
+artifact_uri: file:///home/zeth/PycharmProjects/lcep/mlruns/0/aa75817971d84e16a01a7892e117627a/artifacts
+end_time: 1598531452151
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: aa75817971d84e16a01a7892e117627a
+run_uuid: aa75817971d84e16a01a7892e117627a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1598531418568
+status: 3
+tags: []
+user_id: zeth
