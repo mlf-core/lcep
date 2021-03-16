@@ -3,13 +3,11 @@ import xgboost as xgb
 import mlflow
 import mlflow.xgboost
 import time
-import numpy as np
 import GPUtil
 from rich import traceback, print
 
 from mlf_core.mlf_core import MLFCore
 from data_loading.data_loader import load_train_test_data
-from evaluation.evaluation import calculate_log_metrics
 
 
 def start_training():
@@ -44,6 +42,16 @@ def start_training():
         default=True,
         help='Enable or disable single precision histogram calculation.',
     )
+    parser.add_argument(
+        '--training-data',
+        type=str,
+        help='Path to the training data',
+    )
+    parser.add_argument(
+        '--test-data',
+        type=str,
+        help='Path to the test data',
+    )
     avail_gpus = GPUtil.getGPUs()
     args = parser.parse_args()
     dict_args = vars(args)
@@ -61,10 +69,10 @@ def start_training():
         MLFCore.log_sys_intel_conda_env()
 
         # Fetch and prepare data
-        training_data, test_data = load_train_test_data(training_data, test_data)
+        dtrain, dtest = load_train_test_data()
 
-        # TODO MLF-CORE: Enable input data logging
-        # MLFCore.log_input_data('data/')
+        # Enable input data logging
+        MLFCore.log_input_data('data/')
 
         # Set XGBoost parameters
         param = {'objective': 'multi:softmax',
