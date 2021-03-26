@@ -1,0 +1,15 @@
+artifact_uri: file:///home/steffen/QBiC/mlfcore/lcep/mlruns/0/cfa22f6154f041679c51e3a71dea33fc/artifacts
+end_time: 1616763079981
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: cfa22f6154f041679c51e3a71dea33fc
+run_uuid: cfa22f6154f041679c51e3a71dea33fc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1616762971019
+status: 4
+tags: []
+user_id: steffen

@@ -33,7 +33,7 @@ def load_train_test_data(train_data, test_data):
     training_data = Dataset(X_train_np, y_train, dtrain, train_gene_names, train_sample_names)
     test_data = Dataset(X_test, y_test, dtest, test_gene_names, test_sample_names_test)
 
-    return training_data, test_data
+    return dtrain, dtest
 
 
 def parse_tpm_table(input):
