@@ -7,7 +7,7 @@ name: lcep
 
 # conda_env: environment.yml
 docker_env:
-  image: 8c31c8dc841d #ghcr.io/mlf-core/lcep:0.1.0-SNAPSHOT
+  image: ghcr.io/mlf-core/lcep:0.1.0-SNAPSHOT
   volumes: ["${PWD}/data:/data"]
 
 entry_points:
