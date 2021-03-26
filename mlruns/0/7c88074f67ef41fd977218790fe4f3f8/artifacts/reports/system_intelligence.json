@@ -1,0 +1,98 @@
+{
+  "cpu": {
+    "vendor_id_raw": "AuthenticAMD",
+    "hardware_raw": null,
+    "brand_raw": "AMD Ryzen 5 1600 Six-Core Processor",
+    "arch": "X86_64",
+    "logical_cores": "12",
+    "physical_cores": "6",
+    "clock": "1370.2015833333332 MHz",
+    "clock_min": "1550.0 MHz",
+    "clock_max": "3200.0 MHz",
+    "cache": "L1: 192 KiB\nL2: 3 MiB\nL3: 512 KiB"
+  },
+  "gpus": [],
+  "ram": {
+    "total": 16785637376,
+    "banks": {},
+    "cache": {}
+  },
+  "host": {
+    "hostname": "d2167a809057"
+  },
+  "os": "Linux-5.4.0-70-generic-x86_64-with-glibc2.10",
+  "hdd": {
+    "model": {
+      "/dev/sda": {
+        "size": 976773168,
+        "model": "CT500MX500SSD1  "
+      },
+      "/dev/sdb": {
+        "size": 488397168,
+        "model": "Samsung SSD 850 "
+      }
+    },
+    "usage": {
+      "/dev/sda1": {
+        "total": "98 GB",
+        "used": "28.98 GB",
+        "free": "63.99 GB",
+        "percentage": "31.2",
+        "fstype": "ext4",
+        "mountpoint": "/home/steffen/QBiC/mlfcore/lcep/mlruns/0/7c88074f67ef41fd977218790fe4f3f8/artifacts"
+      }
+    }
+  },
+  "swap": 2147479552,
+  "network": {
+    "eth0": {
+      "isup": "True",
+      "duplex": "NicDuplex.NIC_DUPLEX_FULL",
+      "speed": "10000",
+      "mtu": "1500"
+    },
+    "lo": {
+      "isup": "True",
+      "duplex": "NicDuplex.NIC_DUPLEX_UNKNOWN",
+      "speed": "0",
+      "mtu": "65536"
+    }
+  },
+  "software": {
+    "gcc": {
+      "path": "/usr/bin/gcc",
+      "version": "gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0"
+    },
+    "g++": {
+      "path": "/usr/bin/g++",
+      "version": "g++ (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0"
+    },
+    "python": {
+      "path": "/home/user/miniconda/envs/lcep/bin/python",
+      "version": "Python 3.8.2",
+      "packages": {
+        "pandas": {
+          "version": "1.2.3"
+        },
+        "pycuda": {
+          "version": "2019.1.2"
+        },
+        "xgboost": {
+          "version": "1.3.3"
+        }
+      }
+    },
+    "pip": {
+      "path": "/home/user/miniconda/envs/lcep/bin/pip",
+      "version": "pip 21.0.1 from /home/user/miniconda/envs/lcep/lib/python3.8/site-packages/pip (python 3.8)"
+    },
+    "nvcc": {
+      "path": "/usr/local/cuda/bin/nvcc",
+      "version": "Cuda compilation tools, release 11.2, V11.2.142"
+    },
+    "mkl": {
+      "path": null,
+      "version": null
+    }
+  }
+}

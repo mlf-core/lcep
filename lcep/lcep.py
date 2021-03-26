@@ -69,14 +69,13 @@ def start_training():
         MLFCore.log_sys_intel_conda_env()
 
         # Fetch and prepare data
-        dtrain, dtest = load_train_test_data()
+        dtrain, dtest = load_train_test_data(dict_args['training_data'], dict_args['test_data'])
 
         # Enable input data logging
-        MLFCore.log_input_data('data/')
+        #MLFCore.log_input_data('data/')
 
         # Set XGBoost parameters
-        param = {'objective': 'multi:softmax',
-                 'num_class': 8,
+        param = {'objective': 'binary:logistic',
                  'single_precision_histogram': True if dict_args['single_precision_histogram'] == 'True' else False,
                  'subsample': 0.5,
                  'colsample_bytree': 0.5,
