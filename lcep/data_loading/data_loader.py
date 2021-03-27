@@ -30,10 +30,7 @@ def load_train_test_data(train_data, test_data):
     dtrain = xgb.DMatrix(X_train_np, label=y_train)
     dtest = xgb.DMatrix(X_test_np, label=y_test)
 
-    training_data = Dataset(X_train_np, y_train, dtrain, train_gene_names, train_sample_names)
-    test_data = Dataset(X_test, y_test, dtest, test_gene_names, test_sample_names_test)
-
-    return training_data, test_data
+    return dtrain, dtest
 
 
 def parse_tpm_table(input):

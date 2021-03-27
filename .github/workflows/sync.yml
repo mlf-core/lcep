@@ -31,4 +31,4 @@ jobs:
                token: '${{ secrets.MLF_CORE_SYNC_TOKEN }}'
 
         - name: Sync project
-          run: mlf-core sync . ${{ secrets.MLF_CORE_SYNC_TOKEN }} zethson
+          run: mlf-core --verbose sync . ${{ secrets.MLF_CORE_SYNC_TOKEN }} zethson
