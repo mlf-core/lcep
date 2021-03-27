@@ -72,7 +72,7 @@ def start_training():
         dtrain, dtest = load_train_test_data(dict_args['training_data'], dict_args['test_data'])
 
         # Enable input data logging
-        #MLFCore.log_input_data('data/')
+        # MLFCore.log_input_data('data/')
 
         # Set XGBoost parameters
         param = {'objective': 'binary:logistic',
