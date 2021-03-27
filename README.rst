@@ -1,24 +1,19 @@
-.. image:: https://user-images.githubusercontent.com/21954664/84388841-84b4cc80-abf5-11ea-83f3-b8ce8de36e25.png
-    :target: https://mlf-core.com
-    :alt: mlf-core logo
-
-|
-
 ====
 lcep
 ====
 
 .. image:: https://github.com/mlf-core/lcep/workflows/Train%20lcep%20using%20CPU/badge.svg
-        :target: https://github.com/mlf-core/lcep/workflows/Train%20lcep%20using%20CPU/badge.svg
+        :target: https://github.com/mlf-core/lcep/actions?query=workflow%3A%22Train+lcep+using+CPU%22
         :alt: Github Workflow CPU Training lcep Status
 
 .. image:: https://github.com/mlf-core/lcep/workflows/Publish%20Container%20to%20Docker%20Packages/badge.svg
-        :target: https://github.com/mlf-core/lcep/workflows/Publish%20Container%20to%20Docker%20Packages/badge.svg
+        :target: https://github.com/mlf-core/lcep/actions?query=workflow%3A%22Publish+Container+to+Docker+Packages%22
         :alt: Publish Container to Docker Packages
 
 .. image:: https://github.com/mlf-core/lcep/workflows/mlf-core%20lint/badge.svg
-        :target: https://github.com/mlf-core/lcep/workflows/mlf-core%20lint/badge.svg
+        :target: https://github.com/mlf-core/lcep/actions?query=workflow%3A%22mlf-core+lint%22
         :alt: mlf-core lint
+
 
 .. image:: https://readthedocs.org/projects/lcep/badge/?version=latest
         :target: https://lcep.readthedocs.io/en/latest/?badge=latest
