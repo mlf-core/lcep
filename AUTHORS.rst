@@ -6,6 +6,7 @@ Development Lead
 ----------------
 
 * Lukas Heumos <lukas.heumos@posteo.net>
+* Steffen Lemke <steffen.lemke@uni-tuebingen.de>
 
 Contributors
 ------------

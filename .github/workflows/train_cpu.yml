@@ -18,7 +18,7 @@ jobs:
         with:
           dockerfile: Dockerfile
           repository: ghcr.io/mlf-core/lcep
-          tags: 0.1.0-SNAPSHOT
+          tags: 1.0.0
           push: false
 
       - name: Setup Python

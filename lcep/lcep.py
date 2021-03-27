@@ -77,9 +77,12 @@ def start_training():
         # Set XGBoost parameters
         param = {'objective': 'binary:logistic',
                  'single_precision_histogram': True if dict_args['single_precision_histogram'] == 'True' else False,
-                 'subsample': 0.5,
-                 'colsample_bytree': 0.5,
-                 'colsample_bylevel': 0.5}
+                 'subsample': 0.7,
+                 'colsample_bytree': 0.6,
+                 'learning_rate': 0.2,
+                 'max_depth': 3,
+                 'min_child_weight': 1,
+                 'eval_metric': 'logloss'}
 
         # Set random seeds
         MLFCore.set_general_random_seeds(dict_args["general_seed"])

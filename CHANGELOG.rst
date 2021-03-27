@@ -5,8 +5,23 @@ Changelog
 This project adheres to `Semantic Versioning <https://semver.org/>`_.
 
 
-0.1.0-SNAPSHOT (2020-11-11)
----------------------------------------------
+1.0.0 (2021-03-11)
+------------------
+
+**Added**
+
+* Added new train and test dataset based on TCGA-LIHC & GTEx (liver)
+* Added optimized hyperparameters to the model
+
+**Fixed**
+
+**Dependencies**
+
+**Deprecated**
+
+
+0.1.0 (2021-03-11)
+------------------
 
 **Added**
 
