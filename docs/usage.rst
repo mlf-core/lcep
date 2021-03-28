@@ -43,9 +43,7 @@ Parameters
 - training-data               Path to the training data csv file                          ['train.csv': string]
 - test-data                   Path to the test data csv file                              ['test.csv':  string]
 - cuda:                       Whether to train with CUDA support (=GPU)                   ['True': string]
-- max_epochs:                 Number of epochs to train                                   [25:        int]
+- max_epochs:                 Number of epochs to train                                   [1000:        int]
 - general-seed:               Python, Random, Numpy seed                                  [0:         int]
 - xgboost-seed:               XGBoost specific seed                                       [0:         int]
 - single-precision-histogram  Whether to enable `single precision for histogram building <https://xgboost.readthedocs.io/en/latest/parameter.html#additional-parameters-for-hist-and-gpu-hist-tree-method>`_ ['True': string]
-
-TODO MLF-CORE: Write your usage and parameter documentation here.
