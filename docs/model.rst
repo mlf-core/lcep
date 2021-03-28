@@ -4,7 +4,7 @@ Model
 Overview
 ~~~~~~~~~~
 
-The hereby trained model classifies samples generated from gene expression data into cancerous or benign.
+The hereby trained model classifies samples generated from gene expression data into cancerous or healthy.
 
 Training and test data
 ~~~~~~~~~~~~~~~~~~~~~~~~
