@@ -32,9 +32,13 @@ The full training history is viewable by running the mlflow user interface insid
 Hyperparameter selection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No sophisticated Hyperparameter selection was conducted due to time constraints.
+The hyperparameters of this model were selected using a grid search approach.
 
-1. ``single-precision-histogram`` was enabled for faster training.
-2. ``subsample`` was set to 0.5 for arbitrary reasons.
-3. ``colsample_bytree`` was set to 0.5 for arbitrary reasons.
-4. ``colsample_bylevel`` was set to 0.5 for arbitrary reasons.
+1. ``single-precision-histogram`` was enabled for faster training
+2. ``subsample`` was set to 0.7
+3. ``colsample_bytree`` was set to 0.6
+4. ``learning_rate`` was set to 0.2
+5. ``max_depth`` was set to 3
+6. ``min_child_weight`` was set to 1
+7. ``eval_metric`` was set to ``logloss``
+8. ``objective`` was set to ``binary:logistic``
