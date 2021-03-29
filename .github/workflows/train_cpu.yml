@@ -18,16 +18,16 @@ jobs:
         with:
           dockerfile: Dockerfile
           repository: ghcr.io/mlf-core/lcep
-          tags: 0.1.0-SNAPSHOT
+          tags: 1.0.0
           push: false
 
       - name: Setup Python
         uses: actions/setup-python@v1
         with:
-          python-version:  ${{ matrix.python }}
+          python-version:  ${{ matrix.python }} 
 
       - name: Install mlflow
         run: pip install mlflow
 
       - name: Train on the CPU
-        run: mlflow run . -P training-data='/data/train.tsv' -P test-data='/data/test.tsv'
+        run: mlflow run . -P max_epochs=2 -P training-data='/data/train.tsv' -P test-data='/data/test.tsv'

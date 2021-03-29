@@ -4,38 +4,23 @@ Model
 Overview
 ~~~~~~~~~~
 
-<<<<<<< HEAD
-The hereby trained model classifies samples generated from gene expression data into cancerous or benign.
-=======
-The trained model predicts the forest covertype from cartographic variables only.
->>>>>>> TEMPLATE
+The hereby trained model classifies samples generated from gene expression data into cancerous or healthy.
 
 Training and test data
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-<<<<<<< HEAD
-Patients with cancer and without cancer were sequenced (RNA-Seq). All samples of the patients were assigned 'cancerous' or 'benign'.
+Patients with cancer and without cancer were sequenced (RNA-Seq). All samples of the patients were assigned 'cancerous' or 'healthy'.
 The RNA-Seq experiments generated reads, which are commonly associated with expression values per gene.
-Furthermore, all replicates were merged into single samples resulting in median gene expression values per gene.
 These expression values were normalized into transcripts per million (TPM) values.
-Next, all genes were subject to human pathway analysis. Any genes not present in any pathway was discarded.
-Finally, the whole dataset was split into 80% training and 20% test data.
+Next, all genes were subject to pathway analysis. Any genes not present in any cancer associated pathway were discarded.
+Finally, the whole dataset was split into 75% training and 25% test data.
 lcep was trained with the training data and evaluated using the test data.
 
 Model details
 ~~~~~~~~~~~~~~
 
 The model is based on `XGBoost <https://xgboost.readthedocs.io/en/latest/>`_.
-Training was conducted using a single GPU (NVIDIA 1050M), which is also reported in the system-intelligence report.
-Hence, ``gpu_hist`` is the training algorithm of choice.
-=======
-The training data origins from the `covertype dataset <https://archive.ics.uci.edu/ml/datasets/covertype>`_, which contains 581012 instances of 54 attributes.
-
-Model architecture
-~~~~~~~~~~~~~~~~~~~~~~
-
-The model is based on `XGBoost <https://xgboost.readthedocs.io/en/latest/>`_.
->>>>>>> TEMPLATE
+Training was conducted using a single GPU . Hence, ``gpu_hist`` is the training algorithm of choice.
 
 Evaluation
 ~~~~~~~~~~~~~
@@ -47,9 +32,13 @@ The full training history is viewable by running the mlflow user interface insid
 Hyperparameter selection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No sophisticated Hyperparameter selection was conducted due to time constraints.
+The hyperparameters of this model were selected using a grid search approach.
 
-1. ``single-precision-histogram`` was enabled for faster training.
-2. ``subsample`` was set to 0.5 for arbitrary reasons.
-3. ``colsample_bytree`` was set to 0.5 for arbitrary reasons.
-4. ``colsample_bylevel`` was set to 0.5 for arbitrary reasons.
+1. ``single-precision-histogram`` was enabled for faster training
+2. ``subsample`` was set to 0.7
+3. ``colsample_bytree`` was set to 0.6
+4. ``learning_rate`` was set to 0.2
+5. ``max_depth`` was set to 3
+6. ``min_child_weight`` was set to 1
+7. ``eval_metric`` was set to ``logloss``
+8. ``objective`` was set to ``binary:logistic``
