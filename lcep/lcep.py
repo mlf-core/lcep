@@ -3,11 +3,13 @@ import xgboost as xgb
 import mlflow
 import mlflow.xgboost
 import time
+import numpy as np
 import GPUtil
 from rich import traceback, print
 
 from mlf_core.mlf_core import MLFCore
 from data_loading.data_loader import load_train_test_data
+from evaluation.evaluation import calculate_log_metrics
 
 
 def start_training():
@@ -69,7 +71,7 @@ def start_training():
         MLFCore.log_sys_intel_conda_env()
 
         # Fetch and prepare data
-        dtrain, dtest = load_train_test_data(dict_args['training_data'], dict_args['test_data'])
+        training_data, test_data = load_train_test_data(dict_args['training_data'], dict_args['test_data'])
 
         # Enable input data logging
         # MLFCore.log_input_data('data/')
@@ -97,11 +99,15 @@ def start_training():
         # Train on the chosen device
         results = {}
         runtime = time.time()
-        xgb.train(param, dtrain, dict_args['max_epochs'], evals=[(dtest, 'test')], evals_result=results)
+        booster = xgb.train(param, training_data.DM, dict_args['max_epochs'], evals=[(test_data.DM, 'test')], evals_result=results)
         device = 'GPU' if use_cuda else 'CPU'
         if use_cuda:
             print(f'[bold green]{device} Run Time: {str(time.time() - runtime)} seconds')
 
+        # Perform some predictions on the test data, evaluate and log them
+        print('[bold blue]Performing predictions on test data.')
+        test_predictions = np.round(booster.predict(test_data.DM))
+        calculate_log_metrics(test_data.y, test_predictions)
 
 if __name__ == '__main__':
     traceback.install()
