@@ -109,6 +109,7 @@ def start_training():
         test_predictions = np.round(booster.predict(test_data.DM))
         calculate_log_metrics(test_data.y, test_predictions)
 
+
 if __name__ == '__main__':
     traceback.install()
     start_training()
