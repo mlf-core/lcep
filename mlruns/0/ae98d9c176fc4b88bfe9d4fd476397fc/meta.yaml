@@ -1,0 +1,15 @@
+artifact_uri: file:///home/slemke/mlf-core/lcep/mlruns/0/ae98d9c176fc4b88bfe9d4fd476397fc/artifacts
+end_time: 1617811591119
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: ae98d9c176fc4b88bfe9d4fd476397fc
+run_uuid: ae98d9c176fc4b88bfe9d4fd476397fc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1617811577609
+status: 3
+tags: []
+user_id: slemke
