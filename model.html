@@ -4,10 +4,11 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Model &mdash; lcep 1.0.0 documentation</title>
+  <title>Model &mdash; lcep 1.0.1 documentation</title>
   
 
   
@@ -62,7 +63,7 @@
             
             
               <div class="version">
-                1.0.0
+                1.0.1
               </div>
             
           
@@ -87,7 +88,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="readme.html">lcep</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
@@ -167,13 +168,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="model">
+  <section id="model">
 <h1>Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="overview">
+<section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>The hereby trained model classifies samples generated from gene expression data into cancerous or healthy.</p>
-</div>
-<div class="section" id="training-and-test-data">
+</section>
+<section id="training-and-test-data">
 <h2>Training and test data<a class="headerlink" href="#training-and-test-data" title="Permalink to this headline">¶</a></h2>
 <p>Patients with cancer and without cancer were sequenced (RNA-Seq). All samples of the patients were assigned ‘cancerous’ or ‘healthy’.
 The RNA-Seq experiments generated reads, which are commonly associated with expression values per gene.
@@ -181,19 +182,19 @@ These expression values were normalized into transcripts per million (TPM) value
 Next, all genes were subject to pathway analysis. Any genes not present in any cancer associated pathway were discarded.
 Finally, the whole dataset was split into 75% training and 25% test data.
 lcep was trained with the training data and evaluated using the test data.</p>
-</div>
-<div class="section" id="model-details">
+</section>
+<section id="model-details">
 <h2>Model details<a class="headerlink" href="#model-details" title="Permalink to this headline">¶</a></h2>
 <p>The model is based on <a class="reference external" href="https://xgboost.readthedocs.io/en/latest/">XGBoost</a>.
 Training was conducted using a single GPU . Hence, <code class="docutils literal notranslate"><span class="pre">gpu_hist</span></code> is the training algorithm of choice.</p>
-</div>
-<div class="section" id="evaluation">
+</section>
+<section id="evaluation">
 <h2>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this headline">¶</a></h2>
 <p>The model was evaluated on 20% of unseen test data. The reported root mean squared error origins from the test data.
 The full training history is viewable by running the mlflow user interface inside the root directory of this project:
 <code class="docutils literal notranslate"><span class="pre">mlflow</span> <span class="pre">ui</span></code>.</p>
-</div>
-<div class="section" id="hyperparameter-selection">
+</section>
+<section id="hyperparameter-selection">
 <h2>Hyperparameter selection<a class="headerlink" href="#hyperparameter-selection" title="Permalink to this headline">¶</a></h2>
 <p>The hyperparameters of this model were selected using a grid search approach.</p>
 <ol class="arabic simple">
@@ -206,8 +207,8 @@ The full training history is viewable by running the mlflow user interface insid
 <li><p><code class="docutils literal notranslate"><span class="pre">eval_metric</span></code> was set to <code class="docutils literal notranslate"><span class="pre">logloss</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">objective</span></code> was set to <code class="docutils literal notranslate"><span class="pre">binary:logistic</span></code></p></li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

@@ -4,10 +4,11 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Usage &mdash; lcep 1.0.0 documentation</title>
+  <title>Usage &mdash; lcep 1.0.1 documentation</title>
   
 
   
@@ -62,7 +63,7 @@
             
             
               <div class="version">
-                1.0.0
+                1.0.1
               </div>
             
           
@@ -87,7 +88,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="readme.html">lcep</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
@@ -173,52 +174,52 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="usage">
+  <section id="usage">
 <h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="setup">
+<section id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <p>mlf-core based mlflow projects require either Conda or Docker to be installed.
 The usage of Docker is highly preferred, since it ensures that system-intelligence can fetch all required and accessible hardware.
 This cannot be guaranteed for Mac let alone Windows environments.</p>
-<div class="section" id="conda">
+<section id="conda">
 <h3>Conda<a class="headerlink" href="#conda" title="Permalink to this headline">¶</a></h3>
 <p>There is no further setup required besides having Conda installed and CUDA configured for GPU support.
 mlflow will create a new environment for every run.</p>
-</div>
-<div class="section" id="docker">
+</section>
+<section id="docker">
 <h3>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h3>
 <p>If you use Docker you should not need to build the Docker container manually, since it should be available on Github Packages or another registry.
 However, if you want to build it manually for e.g. development purposes, ensure that the names matches the defined name in the <a href="#id1"><span class="problematic" id="id2">``</span></a>MLproject``file.
 This is sufficient to train on the CPU. If you want to train using the GPU you need to have the <a class="reference external" href="https://github.com/NVIDIA/nvidia-docker">NVIDIA Container Toolkit</a> installed.</p>
-</div>
-</div>
-<div class="section" id="training">
+</section>
+</section>
+<section id="training">
 <h2>Training<a class="headerlink" href="#training" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="training-on-the-cpu">
+<section id="training-on-the-cpu">
 <h3>Training on the CPU<a class="headerlink" href="#training-on-the-cpu" title="Permalink to this headline">¶</a></h3>
 <p>Set your desired environment in the MLproject file. Start training using <code class="docutils literal notranslate"><span class="pre">mlflow</span> <span class="pre">run</span> <span class="pre">.</span></code>.
 You need to disable CUDA to train on the CPU! See <span class="xref std std-ref">parameters</span>.</p>
-</div>
-<div class="section" id="training-using-gpus">
+</section>
+<section id="training-using-gpus">
 <h3>Training using GPUs<a class="headerlink" href="#training-using-gpus" title="Permalink to this headline">¶</a></h3>
 <p>Conda environments will automatically use the GPU if available.
 Docker requires the accessible GPUs to be passed as runtime parameters. To train using all gpus run <code class="docutils literal notranslate"><span class="pre">mlflow</span> <span class="pre">run</span> <span class="pre">.</span> <span class="pre">-A</span> <span class="pre">gpus=all</span></code>.
 You can replace <code class="docutils literal notranslate"><span class="pre">all</span></code> with specific GPU ids (e.g. 0) if desired.</p>
-</div>
-<div class="section" id="parameters">
+</section>
+<section id="parameters">
 <h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>training-data               Path to the training data csv file                          [‘train.csv’: string]</p></li>
-<li><p>test-data                   Path to the test data csv file                              [‘test.csv’:  string]</p></li>
-<li><p>cuda:                       Whether to train with CUDA support (=GPU)                   [‘True’: string]</p></li>
-<li><p>max_epochs:                 Number of epochs to train                                   [1000:        int]</p></li>
-<li><p>general-seed:               Python, Random, Numpy seed                                  [0:         int]</p></li>
-<li><p>xgboost-seed:               XGBoost specific seed                                       [0:         int]</p></li>
-<li><p>single-precision-histogram  Whether to enable <a class="reference external" href="https://xgboost.readthedocs.io/en/latest/parameter.html#additional-parameters-for-hist-and-gpu-hist-tree-method">single precision for histogram building</a> [‘True’: string]</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">training-data</span></code>              Path to the training data csv file                          <code class="docutils literal notranslate"><span class="pre">['train.csv':</span> <span class="pre">string]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">test-data</span></code>                  Path to the test data csv file                              <code class="docutils literal notranslate"><span class="pre">['test.csv':</span> <span class="pre">string]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cuda</span></code>                       Whether to train with CUDA support (=GPU)                   <code class="docutils literal notranslate"><span class="pre">['True':</span> <span class="pre">string]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_epochs</span></code>                 Number of epochs to train                                   <code class="docutils literal notranslate"><span class="pre">[1000:</span> <span class="pre">int]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">general-seed</span></code>               Python, Random, Numpy seed                                  <code class="docutils literal notranslate"><span class="pre">[0:</span> <span class="pre">int]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xgboost-seed</span></code>               XGBoost specific seed                                       <code class="docutils literal notranslate"><span class="pre">[0:</span> <span class="pre">int]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">single-precision-histogram</span></code> Whether to enable <a class="reference external" href="https://xgboost.readthedocs.io/en/latest/parameter.html#additional-parameters-for-hist-and-gpu-hist-tree-method">single precision for histogram building</a> <code class="docutils literal notranslate"><span class="pre">['True':</span> <span class="pre">string]</span></code></p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
