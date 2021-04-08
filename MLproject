@@ -1,13 +1,13 @@
 # Author: Lukas Heumos
 # Email: lukas.heumos@posteo.net
-# Version: 1.0.0
+# Version: 1.0.1
 # License: MIT
 
 name: lcep
 
 # conda_env: environment.yml
 docker_env:
-  image: ghcr.io/mlf-core/lcep:1.0.0
+  image: ghcr.io/mlf-core/lcep:1.0.1
   volumes: ["${PWD}/data:/data"]
 
 entry_points:
