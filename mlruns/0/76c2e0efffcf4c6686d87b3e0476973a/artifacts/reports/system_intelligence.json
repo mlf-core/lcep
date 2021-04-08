@@ -1,0 +1,138 @@
+{
+  "cpu": {
+    "vendor_id_raw": "AuthenticAMD",
+    "hardware_raw": null,
+    "brand_raw": "AMD Ryzen Threadripper 2990WX 32-Core Processor",
+    "arch": "X86_64",
+    "logical_cores": "64",
+    "physical_cores": "32",
+    "clock": "2673.0158730158732 MHz",
+    "clock_min": "2200.0 MHz",
+    "clock_max": "3000.0 MHz",
+    "cache": "L1: 32 KiB\nL2: 512 KiB\nL3: 512 KiB"
+  },
+  "gpus": [
+    {
+      "architecture": "Volta",
+      "brand": "TITAN V",
+      "compute_capability": "7.0",
+      "memory": "12.65 GB",
+      "memory_clock": "850 kHz",
+      "clock": "1.46 MHz",
+      "multiprocessors": "80",
+      "cores": "5120",
+      "warp_size": "32"
+    }
+  ],
+  "ram": {
+    "total": 134962556928,
+    "banks": {},
+    "cache": {}
+  },
+  "host": {
+    "hostname": "585078e34669"
+  },
+  "os": "Linux-3.10.0-1160.21.1.el7.x86_64-x86_64-with-debian-buster-sid",
+  "hdd": {
+    "model": {
+      "/dev/sda": {
+        "size": 3907029168,
+        "model": "HITACHI HUA72302"
+      },
+      "/dev/sdb": {
+        "size": 3907029168,
+        "model": "HITACHI HUA72302"
+      },
+      "/dev/sdc": {
+        "size": 3907029168,
+        "model": "HITACHI HUA72302"
+      },
+      "/dev/sdd": {
+        "size": 3907029168,
+        "model": "HITACHI HUA72302"
+      },
+      "/dev/nvme0n1": {
+        "size": 1000215216,
+        "model": "Samsung SSD 960 PRO 512GB               "
+      }
+    },
+    "usage": {
+      "/dev/mapper/thansovg-home": {
+        "total": "6.64 TB",
+        "used": "3.42 TB",
+        "free": "3.21 TB",
+        "percentage": "51.6",
+        "fstype": "xfs",
+        "mountpoint": "/home/slemke/mlf-core/lcep/mlruns/0/76c2e0efffcf4c6686d87b3e0476973a/artifacts"
+      },
+      "/dev/mapper/thansovg-var": {
+        "total": "64.39 GB",
+        "used": "33.44 GB",
+        "free": "30.95 GB",
+        "percentage": "51.9",
+        "fstype": "xfs",
+        "mountpoint": "/etc/hosts"
+      },
+      "/dev/mapper/thansovg-root": {
+        "total": "21.46 GB",
+        "used": "11.03 GB",
+        "free": "10.43 GB",
+        "percentage": "51.4",
+        "fstype": "xfs",
+        "mountpoint": "/usr/lib/x86_64-linux-gnu/libnvidia-compiler.so.460.67"
+      }
+    }
+  },
+  "swap": 1073737728,
+  "network": {
+    "eth0": {
+      "isup": "True",
+      "duplex": "NicDuplex.NIC_DUPLEX_FULL",
+      "speed": "10000",
+      "mtu": "1500"
+    },
+    "lo": {
+      "isup": "True",
+      "duplex": "NicDuplex.NIC_DUPLEX_UNKNOWN",
+      "speed": "0",
+      "mtu": "65536"
+    }
+  },
+  "software": {
+    "gcc": {
+      "path": "/usr/bin/gcc",
+      "version": "gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0"
+    },
+    "g++": {
+      "path": "/usr/bin/g++",
+      "version": "g++ (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0"
+    },
+    "python": {
+      "path": "/home/user/miniconda/envs/lcep/bin/python",
+      "version": "Python 3.7.10",
+      "packages": {
+        "pandas": {
+          "version": "1.2.3"
+        },
+        "pycuda": {
+          "version": "2019.1.2"
+        },
+        "xgboost": {
+          "version": "1.2.1"
+        }
+      }
+    },
+    "pip": {
+      "path": "/home/user/miniconda/envs/lcep/bin/pip",
+      "version": "pip 21.0.1 from /home/user/miniconda/envs/lcep/lib/python3.7/site-packages/pip (python 3.7)"
+    },
+    "nvcc": {
+      "path": "/usr/local/cuda/bin/nvcc",
+      "version": "Cuda compilation tools, release 10.2, V10.2.89"
+    },
+    "mkl": {
+      "path": null,
+      "version": null
+    }
+  }
+}

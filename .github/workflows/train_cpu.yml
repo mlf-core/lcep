@@ -18,13 +18,13 @@ jobs:
         with:
           dockerfile: Dockerfile
           repository: ghcr.io/mlf-core/lcep
-          tags: 1.0.0
+          tags: 1.0.1
           push: false
 
       - name: Setup Python
         uses: actions/setup-python@v1
         with:
-          python-version:  ${{ matrix.python }} 
+          python-version:  ${{ matrix.python }}
 
       - name: Install mlflow
         run: pip install mlflow
